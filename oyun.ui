@@ -142,6 +142,20 @@
            </spacer>
           </item>
           <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLabel" name="labelTur_2">
+              <property name="text">
+               <string>Tur</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="spinTur_2"/>
+            </item>
+           </layout>
+          </item>
+          <item>
            <widget class="QPushButton" name="pushOyuncuKayit">
             <property name="text">
              <string>Kaydet ve Basla</string>

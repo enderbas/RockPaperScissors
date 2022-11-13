@@ -39,6 +39,9 @@ Oyun::Oyun(QWidget *parent) : QMainWindow(parent), ui(new Ui::Oyun)
 	ui->labelHide->hide();
 	ui->labelTur->hide();
 	ui->spinTur->hide();
+	ui->labelTur_2->hide();
+	ui->spinTur_2->hide();
+	ui->toolBackToMain->hide();
 }
 
 Oyun::~Oyun()
@@ -111,10 +114,6 @@ void Oyun::on_pushBasla_clicked()
 		setName(oyunSolButonListesi.at(i), oyuncuSol->nesneSec(i)->type);
 	}
 	puanYenile();
-	toplamTurSayisi = ui->spinTur->value();
-	int kalanHamle = toplamTurSayisi - turSayisi;
-	QString mes = QString("Tur: %1 / %2").arg(kalanHamle).arg(toplamTurSayisi);
-	ui->labelHamle->setText(mes);
 }
 
 void Oyun::on_pushTasSec_clicked()
@@ -171,6 +170,8 @@ void Oyun::clearGame()
 	oyuncuSol->blokluNesneler.clear();
 	oyuncuSol->elenenNesneler.clear();
 
+	ui->labelStatusLeft->clear();
+	ui->labelStatusRight->clear();
 	ui->pushLeftMoveNoClick->setText("");
 	ui->pushRightMoveNoClick->setText("");
 	ui->labelSagSkor->setText("");
@@ -336,7 +337,7 @@ void Oyun::oyunSonu()
 	}
 	ui->labelSagSkor->setText(QString::number(puanSag));
 	ui->labelSolSkor->setText(QString::number(puanSol));
-
+	ui->pushDevam->hide();
 	msgBox.exec();
 	return;
 }
@@ -491,6 +492,9 @@ void Oyun::on_pushPrivilageMode_clicked()
 	ui->pushOyunNesne4->show();
 	ui->pushOyunNesne5->show();
 	ui->label_10->show();
+
+	ui->labelTur_2->show();
+	ui->spinTur_2->show();
 }
 
 void Oyun::on_pushOyuncuKayit_clicked()
@@ -505,6 +509,14 @@ void Oyun::on_pushOyuncuKayit_clicked()
 	ui->labelSagOyuncuAdi->setText(oyuncuSag->getOyuncuAdi());
 	ui->labelSagOyuncuID->setText(oyuncuSag->getOyuncuID());
 
-	toplamTurSayisi = ui->spinTur->value();
+	if(ui->spinTur_2->value())
+		toplamTurSayisi = ui->spinTur_2->value();
+	else {
+		toplamTurSayisi = ui->spinTur->value();
+	}
+	int kalanHamle = toplamTurSayisi - turSayisi;
+	QString mes = QString("Tur: %1 / %2").arg(kalanHamle).arg(toplamTurSayisi);
+	ui->labelHamle->setText(mes);
+
 	ui->stackedWidget->setCurrentIndex(PAGES::OYUNALANI);
 }
