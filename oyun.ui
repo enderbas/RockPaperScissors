@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>776</width>
-    <height>597</height>
+    <width>849</width>
+    <height>607</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <item>
        <widget class="QPushButton" name="pushPrivilageMode">
         <property name="text">
-         <string>Sunum Modu</string>
+         <string>Visible Mode</string>
         </property>
        </widget>
       </item>
@@ -56,21 +56,27 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="pageMain">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
          <widget class="QToolButton" name="toolUserPcSelection">
           <property name="text">
-           <string>Kullanici - Bilgisayar Oyunu</string>
+           <string/>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>16</width>
+            <height>16</height>
+           </size>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QToolButton" name="toolPCPCSelection">
           <property name="text">
-           <string>Bilgisayar - Bilgisayar Oyunu</string>
+           <string/>
           </property>
          </widget>
         </item>
@@ -82,8 +88,14 @@
          <layout class="QFormLayout" name="formLayout">
           <item row="0" column="0">
            <widget class="QLabel" name="label_3">
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
             <property name="text">
-             <string>Sol Oyuncu Adi</string>
+             <string>Left Player Name</string>
             </property>
            </widget>
           </item>
@@ -92,6 +104,12 @@
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_5">
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
             <property name="text">
              <string>ID</string>
             </property>
@@ -106,8 +124,14 @@
          <layout class="QFormLayout" name="formLayout_2">
           <item row="0" column="0">
            <widget class="QLabel" name="label_4">
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
             <property name="text">
-             <string>Sag Oyuncu Adi</string>
+             <string>Right Player Name</string>
             </property>
            </widget>
           </item>
@@ -116,6 +140,12 @@
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_6">
+            <property name="font">
+             <font>
+              <pointsize>18</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
             <property name="text">
              <string>ID</string>
             </property>
@@ -145,8 +175,14 @@
            <layout class="QHBoxLayout" name="horizontalLayout_5">
             <item>
              <widget class="QLabel" name="labelTur_2">
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
               <property name="text">
-               <string>Tur</string>
+               <string>Round</string>
               </property>
              </widget>
             </item>
@@ -158,7 +194,7 @@
           <item>
            <widget class="QPushButton" name="pushOyuncuKayit">
             <property name="text">
-             <string>Kaydet ve Basla</string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -174,29 +210,36 @@
            <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,0,0,0,0,0,1,0,0,0,0">
             <item>
              <widget class="QLabel" name="label_7">
+              <property name="font">
+               <font>
+                <family>Arial Rounded MT Bold</family>
+                <pointsize>16</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
               <property name="text">
-               <string>Nesneler</string>
+               <string>Items</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="pushTasSec">
               <property name="text">
-               <string>Tas</string>
+               <string/>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="pushKagiSec">
               <property name="text">
-               <string>Kagit</string>
+               <string/>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="pushMakasSec">
               <property name="text">
-               <string>Makas</string>
+               <string/>
               </property>
              </widget>
             </item>
@@ -215,13 +258,26 @@
             </item>
             <item>
              <widget class="QLabel" name="label_8">
+              <property name="font">
+               <font>
+                <family>Arial Rounded MT Bold</family>
+                <pointsize>16</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
               <property name="text">
-               <string>Seciminiz</string>
+               <string>Selected</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QLabel" name="labelSecimler">
+              <property name="font">
+               <font>
+                <pointsize>14</pointsize>
+                <italic>true</italic>
+               </font>
+              </property>
               <property name="text">
                <string/>
               </property>
@@ -230,14 +286,21 @@
             <item>
              <widget class="QPushButton" name="pushYenidenSec">
               <property name="text">
-               <string>Yeniden Sec</string>
+               <string>Select Again</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QLabel" name="labelTur">
+              <property name="font">
+               <font>
+                <family>Arial Rounded MT Bold</family>
+                <pointsize>16</pointsize>
+                <bold>true</bold>
+               </font>
+              </property>
               <property name="text">
-               <string>Tur Sayisi</string>
+               <string>Round</string>
               </property>
              </widget>
             </item>
@@ -251,7 +314,7 @@
             <item>
              <widget class="QPushButton" name="pushBasla">
               <property name="text">
-               <string>Basla</string>
+               <string/>
               </property>
              </widget>
             </item>
@@ -259,8 +322,15 @@
           </item>
           <item row="0" column="0">
            <widget class="QLabel" name="label">
+            <property name="font">
+             <font>
+              <family>Arial Rounded MT Bold</family>
+              <pointsize>24</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="text">
-             <string>Kullanici Bilgisayar Oyunu</string>
+             <string>SELECT YOUR ITEMS</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -286,169 +356,45 @@
       </widget>
       <widget class="QWidget" name="pageOyunAlani">
        <layout class="QGridLayout" name="gridLayout_5">
-        <item row="2" column="6">
-         <layout class="QFormLayout" name="formLayout_4">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_18">
-            <property name="text">
-             <string>Oyuncu Adi</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_20">
-            <property name="text">
-             <string>ID</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLabel" name="labelSagOyuncuID">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="labelSagOyuncuAdi">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_9">
-            <property name="text">
-             <string>Skor</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QLabel" name="labelSagSkor">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="5" column="1">
-         <widget class="QPushButton" name="pushLeftMoveNoClick">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="0">
-         <spacer name="horizontalSpacer_3">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="8" column="6">
-         <widget class="QPushButton" name="pushDevam">
-          <property name="text">
-           <string>Devam</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1">
+        <item row="6" column="1">
          <widget class="QLabel" name="label_12">
+          <property name="font">
+           <font>
+            <family>Arial Rounded MT Bold</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="text">
-           <string>Sol Oyuncu</string>
+           <string>LEFT PLAYER</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
-        <item row="6" column="1">
-         <widget class="QLabel" name="labelStatusLeft">
+        <item row="7" column="1">
+         <widget class="QPushButton" name="pushLeftMoveNoClick">
           <property name="text">
            <string/>
           </property>
          </widget>
         </item>
-        <item row="2" column="0">
-         <layout class="QFormLayout" name="formLayout_3">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_14">
-            <property name="text">
-             <string>Oyuncu Adi</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="labelSolOyuncuAdi">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_16">
-            <property name="text">
-             <string>ID</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLabel" name="labelSolOyuncuID">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_2">
-            <property name="text">
-             <string>Skor</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QLabel" name="labelSolSkor">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="7" column="1">
-         <spacer name="verticalSpacer_3">
+        <item row="2" column="0" colspan="7">
+         <widget class="Line" name="line_3">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Horizontal</enum>
           </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
+         </widget>
         </item>
-        <item row="2" column="1">
-         <spacer name="verticalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
+        <item row="10" column="6">
+         <widget class="QPushButton" name="pushDevam">
+          <property name="text">
+           <string/>
           </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
+         </widget>
         </item>
-        <item row="5" column="6">
+        <item row="7" column="6">
          <spacer name="horizontalSpacer_4">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -461,20 +407,21 @@
           </property>
          </spacer>
         </item>
-        <item row="5" column="2">
-         <spacer name="horizontalSpacer_5">
+        <item row="4" column="3" rowspan="7">
+         <widget class="Line" name="line">
           <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+           <enum>Qt::Vertical</enum>
           </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
+         </widget>
         </item>
-        <item row="5" column="4">
+        <item row="7" column="5">
+         <widget class="QPushButton" name="pushRightMoveNoClick">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="4">
          <spacer name="horizontalSpacer_6">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -487,90 +434,7 @@
           </property>
          </spacer>
         </item>
-        <item row="4" column="5">
-         <widget class="QLabel" name="label_13">
-          <property name="text">
-           <string>Sag Oyuncu</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="10" column="0" colspan="7">
-         <layout class="QGridLayout" name="gridLayout_6">
-          <item row="1" column="4">
-           <widget class="QPushButton" name="pushHide5">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QPushButton" name="pushHide1">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QPushButton" name="pushHide3">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QPushButton" name="pushHide2">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="3">
-           <widget class="QPushButton" name="pushHide4">
-            <property name="text">
-             <string/>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0" colspan="5">
-           <widget class="QLabel" name="labelHide">
-            <property name="text">
-             <string>Sag Taraf Nesneleri</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item row="2" column="3" rowspan="7">
-         <widget class="Line" name="line">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0" colspan="7">
-         <widget class="QLabel" name="label_11">
-          <property name="text">
-           <string>Oyun Alani</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="5">
-         <widget class="QPushButton" name="pushRightMoveNoClick">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="9" column="0" colspan="7">
+        <item row="11" column="0" colspan="7">
          <layout class="QGridLayout" name="gridLayout_4">
           <item row="1" column="0">
            <layout class="QHBoxLayout" name="layoutNesneler">
@@ -613,8 +477,96 @@
           </item>
           <item row="0" column="0">
            <widget class="QLabel" name="label_10">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="text">
-             <string>Sol Taraf Nesneleri</string>
+             <string>Left Side Items</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="9" column="1">
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="8" column="5">
+         <widget class="QLabel" name="labelStatusRight">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="12" column="0" colspan="7">
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="1" column="4">
+           <widget class="QPushButton" name="pushHide5">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="pushHide1">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QPushButton" name="pushHide3">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="pushHide2">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QPushButton" name="pushHide4">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="5">
+           <widget class="QLabel" name="labelHide">
+            <property name="font">
+             <font>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Right Side Items</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -624,14 +576,193 @@
          </layout>
         </item>
         <item row="6" column="5">
-         <widget class="QLabel" name="labelStatusRight">
+         <widget class="QLabel" name="label_13">
+          <property name="font">
+           <font>
+            <family>Arial Rounded MT Bold</family>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="text">
-           <string/>
+           <string>RIGHT PLAYER</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
-        <item row="1" column="0" colspan="7">
+        <item row="7" column="0">
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="0" colspan="7">
+         <widget class="QLabel" name="label_11">
+          <property name="font">
+           <font>
+            <family>Arial Rounded MT Bold</family>
+            <pointsize>24</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>PLAYGROUND</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <layout class="QFormLayout" name="formLayout_3">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_14">
+            <property name="text">
+             <string>Player Name</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="labelSolOyuncuAdi">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_16">
+            <property name="text">
+             <string>ID</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="labelSolOyuncuID">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Skor</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="labelSolSkor">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="4" column="6">
+         <layout class="QFormLayout" name="formLayout_4">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_18">
+            <property name="text">
+             <string>Player Name</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_20">
+            <property name="text">
+             <string>ID</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="labelSagOyuncuID">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="labelSagOyuncuAdi">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>Skor</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="labelSagSkor">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="8" column="1">
+         <widget class="QLabel" name="labelStatusLeft">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="7" column="2">
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="3" column="0" colspan="7">
          <widget class="QLabel" name="labelHamle">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string/>
           </property>
@@ -651,7 +782,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>776</width>
+     <width>849</width>
      <height>21</height>
     </rect>
    </property>

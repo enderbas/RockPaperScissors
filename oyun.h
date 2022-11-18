@@ -50,6 +50,7 @@ private:
 private:
 	void clearGame();
 	void setName(QPushButton *pb, Nesne::TURLER tur);
+	void setPbIcon(QAbstractButton *pb, QString path, int size = 100);
 	void createNesneButton(Oyuncu *p, QPushButton * buton);
 	int randInt(int low, int high);
 	Nesne *randNesneUret();

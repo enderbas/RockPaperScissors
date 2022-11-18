@@ -37,11 +37,17 @@ Oyun::Oyun(QWidget *parent) : QMainWindow(parent), ui(new Ui::Oyun)
 	ui->pushHide4->hide();
 	ui->pushHide5->hide();
 	ui->labelHide->hide();
-	ui->labelTur->hide();
-	ui->spinTur->hide();
-	ui->labelTur_2->hide();
-	ui->spinTur_2->hide();
-	ui->toolBackToMain->hide();
+
+	setPbIcon(ui->toolUserPcSelection, ":/icons/user.svg");
+	setPbIcon(ui->toolPCPCSelection, ":/icons/computer.svg");
+	setPbIcon(ui->pushBasla, ":/icons/play.svg", 25);
+	setPbIcon(ui->pushDevam, ":/icons/play.svg", 50);
+	setPbIcon(ui->pushOyuncuKayit, ":/icons/play.svg", 50);
+	setPbIcon(ui->pushYenidenSec, ":/icons/return.svg", 25);
+	setPbIcon(ui->toolBackToMain, ":/icons/return.svg", 20);
+	setName(ui->pushTasSec, Nesne::TAS);
+	setName(ui->pushKagiSec, Nesne::KAGIT);
+	setName(ui->pushMakasSec, Nesne::MAKAS);
 }
 
 Oyun::~Oyun()
@@ -105,7 +111,7 @@ void Oyun::on_pushBasla_clicked()
 {
 	if(oyuncuSol->nesneListesi.size() != 5) {
 		QMessageBox msgBox;
-		msgBox.setText("Bes tane nesne secmeniz gerekmekte.");
+		msgBox.setText("You have to choose 5 item.");
 		msgBox.exec();
 		return;
 	}
@@ -119,7 +125,7 @@ void Oyun::on_pushBasla_clicked()
 void Oyun::on_pushTasSec_clicked()
 {
 	if (secimSayisi < 5) {
-		ui->labelSecimler->setText(ui->labelSecimler->text() + " Tas");
+		ui->labelSecimler->setText(ui->labelSecimler->text() + " Stone");
 		secimSayisi++;
 		auto *n = new tas;
 		n->type = tas::TAS;
@@ -130,7 +136,7 @@ void Oyun::on_pushTasSec_clicked()
 void Oyun::on_pushKagiSec_clicked()
 {
 	if (secimSayisi < 5) {
-		ui->labelSecimler->setText(ui->labelSecimler->text() + " Kagit");
+		ui->labelSecimler->setText(ui->labelSecimler->text() + " Paper");
 		secimSayisi++;
 		auto *n = new kagit;
 		n->type = kagit::KAGIT;
@@ -141,7 +147,7 @@ void Oyun::on_pushKagiSec_clicked()
 void Oyun::on_pushMakasSec_clicked()
 {
 	if (secimSayisi < 5) {
-		ui->labelSecimler->setText(ui->labelSecimler->text() + " Makas");
+		ui->labelSecimler->setText(ui->labelSecimler->text() + " Scissors");
 		secimSayisi++;
 		auto *n = new Makas;
 		n->type = Makas::MAKAS;
@@ -181,35 +187,49 @@ void Oyun::clearGame()
 		setName(oyunSagButonListesi.at(i), Nesne::NONE);
 	}
 	toplamTurSayisi = ui->spinTur->value();
+	ui->pushDevam->show();
 }
 
 void Oyun::setName(QPushButton *pb, Nesne::TURLER tur)
 {
+	QPixmap pmap;
 	switch (tur) {
 	case Nesne::AGIRTAS:
-		pb->setText("AGIR TAS");
+		pb->setText("Special Stone");
 		break;
 	case Nesne::USTAMAKAS:
-		pb->setText("USTA MAKAS");
+		pb->setText("Special Scissors");
 		break;
 	case Nesne::OZELKAGIT:
-		pb->setText("OZEL KAGIT");
+		pb->setText("Special Paper");
 		break;
 	case Nesne::NONE:
 		pb->setText("");
 		break;
 	case Nesne::KAGIT:
-		pb->setText("KAGIT");
+		pmap = QPixmap(":/icons/paper.svg");
 		break;
 	case Nesne::MAKAS:
-		pb->setText("MAKAS");
+		pmap = QPixmap(":/icons/sci.svg");
 		break;
 	case Nesne::TAS:
-		pb->setText("TAS");
+		pmap = QPixmap(":/icons/rock.svg");
 		break;
 	default:
 		break;
 	}
+	QIcon ico(pmap);
+
+	pb->setIcon(ico);
+	pb->setIconSize(QSize(100, 100));
+}
+
+void Oyun::setPbIcon(QAbstractButton *pb, QString path, int size)
+{
+	QPixmap pmap(path);
+	QIcon ico(pmap);
+	pb->setIcon(ico);
+	pb->setIconSize(QSize(size, size));
 }
 
 void Oyun::createNesneButton(Oyuncu *p, QPushButton *buton)
@@ -258,17 +278,17 @@ void Oyun::terfi(Nesne *n, QPushButton *pb)
 	case Nesne::TAS:
 		n = new AgirTas;
 		n->type = Nesne::AGIRTAS;
-		pb->setText("Agir Tas");
+		pb->setText("Special Stone");
 		break;
 	case Nesne::KAGIT:
 		n = new OzelKagit;
 		n->type = Nesne::OZELKAGIT;
-		pb->setText("Ozel Kagit");
+		pb->setText("Special Paper");
 		break;
 	case Nesne::MAKAS:
 		n = new UstaMakas;
 		n->type = Nesne::USTAMAKAS;
-		pb->setText("Usta Makas");
+		pb->setText("Special Scissors");
 		break;
 	case Nesne::NONE:
 		break;
@@ -308,7 +328,7 @@ void Oyun::puanYenile()
 		oyuncuSag->nesneListesi.at(sagCurrentIndex)->nesnePuaniGoster().first;
 	dayaniklilik =
 		oyuncuSag->nesneListesi.at(sagCurrentIndex)->nesnePuaniGoster().second;
-	mes = QString("Seviye: %1 Dayaniklilik: %2").arg(seviye).arg(dayaniklilik);
+	mes = QString("Level: %1 Strength: %2").arg(seviye).arg(dayaniklilik);
 	ui->pushRightMoveNoClick->setToolTip(mes);
 }
 
@@ -328,11 +348,11 @@ void Oyun::oyunSonu()
 		puanSol = puanSol + oyuncuSol->nesneSec(i)->getDayaniklilik();
 	}
 	QMessageBox msgBox;
-	if(puanSag > puanSol) {
-		msgBox.setText("Sag taraf kazandi");
+	if (puanSag > puanSol) {
+		msgBox.setText("Right side win");
 		oyuncuSag->setSkor(puanSag);
 	} else {
-		msgBox.setText("Sol taraf kazandi");
+		msgBox.setText("Left Side win");
 		oyuncuSol->setSkor(puanSol);
 	}
 	ui->labelSagSkor->setText(QString::number(puanSag));
@@ -360,12 +380,12 @@ Nesne *Oyun::randNesneSec(Oyuncu *p, QPushButton *pb, bool isLeft = false)
 
 void Oyun::solIcinNesneSec(int index)
 {
-	if(pcpc)
+	if (pcpc)
 		return;
 	if ((oyuncuSol->blokluNesneler.size() != 4) &&
 		oyuncuSol->blokluNesneler.contains(index)) {
 		QMessageBox msgBox;
-		msgBox.setText("Tum nesneler secilmeden ayni nesne secilemez");
+		msgBox.setText("Select all other items before selecting same item");
 		msgBox.exec();
 		return;
 	}
@@ -404,7 +424,7 @@ void Oyun::on_pushDevam_clicked()
 	if (!pcpc) {
 		if (!isPlayed) {
 			QMessageBox msgBox;
-			msgBox.setText("Sizin Siraniz");
+			msgBox.setText("Your Turn");
 			msgBox.exec();
 			return;
 		}
@@ -468,7 +488,7 @@ void Oyun::on_pushDevam_clicked()
 
 	if (turSayisi == toplamTurSayisi) {
 		QMessageBox msgBox;
-		msgBox.setText("Tur Sayisi Tukendi");
+		msgBox.setText("Run out of laps");
 		msgBox.exec();
 		oyunSonu();
 		return;
