@@ -11,7 +11,6 @@
 #include "ustamakas.h"
 
 #include <QMessageBox>
-#include <QTime>
 
 Oyun::Oyun(QWidget *parent) : QMainWindow(parent), ui(new Ui::Oyun)
 {
@@ -63,7 +62,7 @@ void Oyun::on_toolUserPcSelection_clicked()
 		createNesneButton(oyuncuSag, oyunSagButonListesi.at(i));
 	}
 	pcpc = false;
-	ui->toolBackToMain->setVisible(true);
+	ui->toolBackToMain->show();
 	ui->stackedWidget->setCurrentIndex(PAGES::NESNESECME);
 	ui->pushOyunNesne1->show();
 	ui->pushOyunNesne2->show();
@@ -83,7 +82,7 @@ void Oyun::on_toolPCPCSelection_clicked()
 	}
 
 	pcpc = true;
-	ui->toolBackToMain->setVisible(true);
+	ui->toolBackToMain->show();
 	ui->stackedWidget->setCurrentIndex(PAGES::YARISMACIBILGI);
 	ui->pushOyunNesne1->hide();
 	ui->pushOyunNesne2->hide();
@@ -109,7 +108,7 @@ void Oyun::on_toolBackToMain_clicked()
 
 void Oyun::on_pushBasla_clicked()
 {
-	if(oyuncuSol->nesneListesi.size() != 5) {
+	if (oyuncuSol->nesneListesi.size() != 5) {
 		QMessageBox msgBox;
 		msgBox.setText("You have to choose 5 item.");
 		msgBox.exec();
@@ -179,7 +178,8 @@ void Oyun::clearGame()
 	ui->labelStatusLeft->clear();
 	ui->labelStatusRight->clear();
 	ui->pushLeftMoveNoClick->setText("");
-	ui->pushRightMoveNoClick->setText("");
+	ui->pushLeftMoveNoClick->setIcon(QIcon());
+	ui->pushRightMoveNoClick->setIcon(QIcon());
 	ui->labelSagSkor->setText("");
 	ui->labelSolSkor->setText("");
 	for (int i = 0; i < 5; i++) {
@@ -303,16 +303,13 @@ void Oyun::puanYenile()
 		int seviye = oyuncuSol->nesneListesi.at(i)->nesnePuaniGoster().first;
 		int dayaniklilik =
 			oyuncuSol->nesneListesi.at(i)->nesnePuaniGoster().second;
-		QString mes = QString("Seviye: %1 Dayaniklilik: %2")
-						  .arg(seviye)
-						  .arg(dayaniklilik);
+		QString mes =
+			QString("Level: %1 Strength: %2").arg(seviye).arg(dayaniklilik);
 		oyunSolButonListesi.at(i)->setToolTip(mes);
 
 		seviye = oyuncuSag->nesneListesi.at(i)->nesnePuaniGoster().first;
 		dayaniklilik = oyuncuSag->nesneListesi.at(i)->nesnePuaniGoster().second;
-		mes = QString("Seviye: %1 Dayaniklilik: %2")
-				  .arg(seviye)
-				  .arg(dayaniklilik);
+		mes = QString("Level: %1 Strength: %2").arg(seviye).arg(dayaniklilik);
 		oyunSagButonListesi.at(i)->setToolTip(mes);
 	}
 
@@ -321,7 +318,7 @@ void Oyun::puanYenile()
 	int dayaniklilik =
 		oyuncuSol->nesneListesi.at(solCurrentIndex)->nesnePuaniGoster().second;
 	QString mes =
-		QString("Seviye: %1 Dayaniklilik: %2").arg(seviye).arg(dayaniklilik);
+		QString("Level: %1 Strength: %2").arg(seviye).arg(dayaniklilik);
 	ui->pushLeftMoveNoClick->setToolTip(mes);
 
 	seviye =
@@ -335,15 +332,15 @@ void Oyun::puanYenile()
 void Oyun::oyunSonu()
 {
 	int puanSag = 0;
-	for(int i = 0 ; i < oyuncuSag->nesneListesi.size() ; i++) {
-		if(oyuncuSag->elenenNesneler.contains(i))
+	for (int i = 0; i < oyuncuSag->nesneListesi.size(); i++) {
+		if (oyuncuSag->elenenNesneler.contains(i))
 			continue;
 		puanSag = puanSag + oyuncuSag->nesneSec(i)->getDayaniklilik();
 	}
 
 	int puanSol = 0;
-	for(int i = 0 ; i < oyuncuSol->nesneListesi.size() ; i++) {
-		if(oyuncuSol->elenenNesneler.contains(i))
+	for (int i = 0; i < oyuncuSol->nesneListesi.size(); i++) {
+		if (oyuncuSol->elenenNesneler.contains(i))
 			continue;
 		puanSol = puanSol + oyuncuSol->nesneSec(i)->getDayaniklilik();
 	}
@@ -483,7 +480,8 @@ void Oyun::on_pushDevam_clicked()
 	}
 
 	int kalanHamle = toplamTurSayisi - turSayisi;
-	QString mes = QString("Tur: %1 / %2").arg(kalanHamle).arg(toplamTurSayisi);
+	QString mes =
+		QString("Round: %1 / %2").arg(kalanHamle).arg(toplamTurSayisi);
 	ui->labelHamle->setText(mes);
 
 	if (turSayisi == toplamTurSayisi) {
@@ -529,7 +527,7 @@ void Oyun::on_pushOyuncuKayit_clicked()
 	ui->labelSagOyuncuAdi->setText(oyuncuSag->getOyuncuAdi());
 	ui->labelSagOyuncuID->setText(oyuncuSag->getOyuncuID());
 
-	if(ui->spinTur_2->value())
+	if (ui->spinTur_2->value())
 		toplamTurSayisi = ui->spinTur_2->value();
 	else {
 		toplamTurSayisi = ui->spinTur->value();
