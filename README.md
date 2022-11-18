@@ -5,7 +5,9 @@ The rock paper scissors game you've known since birth. Includes 2 mode.
 
 Play if you think you have a luck
 
+> *Gameplay gif*
 [![rsp.gif](https://s1.gifyu.com/images/rsp.gif)](https://gifyu.com/image/ShpRs)
+
 
 ## Rules
 1. You cannot select same item before select all other items.
