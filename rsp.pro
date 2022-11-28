@@ -11,34 +11,34 @@ RESOURCES = icons.qrc
 win32:RC_FILE += appicon.rc
 
 SOURCES += \
-    agirtas.cpp \
-    bilgisayar.cpp \
-    kagit.cpp \
-    kullanici.cpp \
-    makas.cpp \
-    nesne.cpp \
-    main.cpp \
-    oyuncu.cpp \
-    oyun.cpp \
-    ozelkagit.cpp \
-    tas.cpp \
-    ustamakas.cpp
+    src/agirtas.cpp \
+    src/bilgisayar.cpp \
+    src/kagit.cpp \
+    src/kullanici.cpp \
+    src/makas.cpp \
+    src/nesne.cpp \
+    src/main.cpp \
+    src/oyuncu.cpp \
+    src/oyun.cpp \
+    src/ozelkagit.cpp \
+    src/tas.cpp \
+    src/ustamakas.cpp
 
 HEADERS += \
-    agirtas.h \
-    bilgisayar.h \
-    kagit.h \
-    kullanici.h \
-    makas.h \
-    nesne.h \
-    oyuncu.h \
-    oyun.h \
-    ozelkagit.h \
-    tas.h \
-    ustamakas.h
+    headers/agirtas.h \
+    headers/bilgisayar.h \
+    headers/kagit.h \
+    headers/kullanici.h \
+    headers/makas.h \
+    headers/nesne.h \
+    headers/oyuncu.h \
+    headers/oyun.h \
+    headers/ozelkagit.h \
+    headers/tas.h \
+    headers/ustamakas.h
 
 FORMS += \
-    oyun.ui
+    src/oyun.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
